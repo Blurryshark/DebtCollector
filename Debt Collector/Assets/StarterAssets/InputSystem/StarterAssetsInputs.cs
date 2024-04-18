@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool punch; //used to track when player punches
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -39,13 +40,21 @@ namespace StarterAssets
 			JumpInput(value.isPressed);
 		}
 
+		public void onAttack(InputValue value)
+		{
+			
+		}
+
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
 #endif
 
-
+		public void AttackInput(bool newAttackState)
+		{
+			punch = newAttackState;
+		}
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
