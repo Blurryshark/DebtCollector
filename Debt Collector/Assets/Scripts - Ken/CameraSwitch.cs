@@ -5,28 +5,28 @@ using Cinemachine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    public CinemachineVirtualCamera thirdPersonCamera;
-    public CinemachineVirtualCamera topDownCamera;
+    public CinemachineVirtualCamera Camera1;
+    public CinemachineVirtualCamera Camera2;
 
-    private bool isThirdPersonActive = true;
+    private bool isCamera1Active = true;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (isThirdPersonActive)
+            if (isCamera1Active)
             {
-                // Switch to the top-down camera
-                thirdPersonCamera.Priority = 0;
-                topDownCamera.Priority = 10;
-                isThirdPersonActive = false;
+                // Switch to the second camera
+                Camera1.Priority = 0;
+                Camera2.Priority = 10;
+                isCamera1Active = false;
             }
             else
             {
-                // Switch back to the third-person camera
-                thirdPersonCamera.Priority = 10;
-                topDownCamera.Priority = 0;
-                isThirdPersonActive = true;
+                // Switch back to the first camera
+                Camera1.Priority = 10;
+                Camera2.Priority = 0;
+                isCamera1Active = true;
             }
         }
     }

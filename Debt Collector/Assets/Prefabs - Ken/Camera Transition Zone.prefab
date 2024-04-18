@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1383940398660988809}
   - component: {fileID: 5858290283037961083}
   - component: {fileID: 8748369732347488040}
-  - component: {fileID: 269434504081152062}
   - component: {fileID: 4264984443915830312}
+  - component: {fileID: 3271966573965654083}
   m_Layer: 0
   m_Name: Camera Transition Zone
   m_TagString: Untagged
@@ -107,20 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &269434504081152062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90824209767135474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab4967e3b304ef14986c6c15556b0bbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thirdPersonCamera: {fileID: 0}
-  topDownCamera: {fileID: 0}
 --- !u!54 &4264984443915830312
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,3 +134,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3271966573965654083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90824209767135474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36008ae2d0ee16f48a994d263808d703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera1: {fileID: 0}
+  Camera2: {fileID: 0}
