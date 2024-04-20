@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Liam's test scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Liam's test scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Prefabs/NestedParentArmature_Unpack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Prefabs/NestedParentArmature_Unpack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Liam's Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Liam's Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPersonMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdPersonMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -100,7 +100,7 @@
       <workItem from="1713402037001" duration="606000" />
       <workItem from="1713406661489" duration="1317000" />
       <workItem from="1713453705233" duration="2375000" />
-      <workItem from="1713501780330" duration="7958000" />
+      <workItem from="1713501780330" duration="18120000" />
     </task>
     <servers />
   </component>
