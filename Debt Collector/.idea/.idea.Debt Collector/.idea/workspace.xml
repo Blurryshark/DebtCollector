@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Liam's Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Liam's Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdPersonMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdPersonMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Player Model.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Player Model.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +99,7 @@
       <workItem from="1713406661489" duration="1317000" />
       <workItem from="1713453705233" duration="2375000" />
       <workItem from="1713501780330" duration="18120000" />
+      <workItem from="1713650797462" duration="12699000" />
     </task>
     <servers />
   </component>

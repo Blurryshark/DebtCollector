@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 5123803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.841, y: 15.539999, z: -12.8}
+  m_LocalPosition: {x: -10.39, y: 7.22, z: -36.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,8 +476,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303842438}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13523676, y: -0.000000017048311, z: 0.0000000023269349, w: 0.9908133}
-  m_LocalPosition: {x: -9.841, y: 15.539999, z: -12.8}
+  m_LocalRotation: {x: 0.13523677, y: 0.000000017048313, z: -0.0000000023269355, w: 0.9908133}
+  m_LocalPosition: {x: -10.39, y: 7.22, z: -36.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,7 +577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2939c51103aca1b42a3738dbb694fc72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -693,7 +693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591963676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1172397, y: 1e-45, z: -0, w: 0.9931037}
+  m_LocalRotation: {x: 0.11723971, y: -0, z: -0, w: 0.9931037}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1109,7 +1109,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2939c51103aca1b42a3738dbb694fc72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1148,8 +1148,8 @@ Transform:
   m_GameObject: {fileID: 1234211829}
   serializedVersion: 2
   m_LocalRotation: {x: -0.24990283, y: -0, z: -0, w: 0.96827096}
-  m_LocalPosition: {x: -7.69, y: 4.32, z: -4.71}
-  m_LocalScale: {x: 10.734, y: 1, z: 17.117}
+  m_LocalPosition: {x: -7.69, y: 4.58, z: -4.64}
+  m_LocalScale: {x: 10.734, y: 1, z: 16.67812}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1181,7 +1181,7 @@ Transform:
   m_GameObject: {fileID: 1354111770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.841, y: 9.82, z: 5.2}
+  m_LocalPosition: {x: -10.39, y: 1.5, z: -18.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1210,11 +1210,22 @@ MonoBehaviour:
   jumpPower: 4
   movement:
     isSprinting: 0
+  moveDir: {x: 0, y: 0, z: 0}
+  dodgeSpeed: 6
+  backstepSpeed: 3
+  backstep: 0
+  dodgeDirection: {x: 0, y: 0, z: 0}
+  dodgeMaxCooldown: 1
+  actCooldown: 0
+  isDodging: 0
   turnSmoothTime: 0.1
+  direction: {x: 0, y: 0, z: 0}
   _gravity: -9
   _gravityMultiplyer: 3
   _velocity: 0
-  isGrounded: 0
+  isGrounded: 1
+  raycastLength: 1.04
+  transform: {fileID: 0}
 --- !u!143 &1354111773
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1235,11 +1246,11 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.6
+  m_Radius: 0.51
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_SkinWidth: 0.0001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1465850718
 GameObject:
@@ -1312,7 +1323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465850718}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15323678, y: -0, z: -0, w: 0.9881895}
+  m_LocalRotation: {x: 0.15323679, y: -2.097963e-17, z: -5.015859e-17, w: 0.9881895}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1411,7 +1422,19 @@ MonoBehaviour:
     m_ActionId: ddfbb527-90bd-4b8e-89ff-77a8da9626e7
     m_ActionName: Gameplay/Sprint[/Keyboard/shift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1354111772}
+        m_TargetAssemblyTypeName: ThirdPersonMovement, Assembly-CSharp
+        m_MethodName: dodge
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 2b10a173-696e-43ad-99b5-9534fd70c37f
     m_ActionName: Gameplay/Roll[/Keyboard/alt]
   m_NeverAutoSwitchControlSchemes: 0
@@ -1510,7 +1533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135909256}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13523676, y: -0.000000008524155, z: 0.0000000011634675, w: 0.9908133}
+  m_LocalRotation: {x: 0.13523677, y: 0.0000000085241565, z: -0.0000000011634679, w: 0.9908133}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1631,6 +1654,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1354111771}
     m_Modifications:
+    - target: {fileID: 655766833952688248, guid: 40e9d1f6d7478a3479d7327f3fe7360b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c0818bb827ab4f241953b98d841628fb, type: 2}
+    - target: {fileID: 1374958445014785680, guid: 40e9d1f6d7478a3479d7327f3fe7360b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c0818bb827ab4f241953b98d841628fb, type: 2}
+    - target: {fileID: 3180819747260340664, guid: 40e9d1f6d7478a3479d7327f3fe7360b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c0818bb827ab4f241953b98d841628fb, type: 2}
     - target: {fileID: 5756046225464363280, guid: 40e9d1f6d7478a3479d7327f3fe7360b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

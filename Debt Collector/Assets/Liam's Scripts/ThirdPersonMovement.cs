@@ -22,11 +22,21 @@ public class ThirdPersonMovement : MonoBehaviour
     public float decceleration = 1.0f;
     [SerializeField] public float jumpPower;
     [SerializeField] private Movement movement;
+    public Vector3 moveDir = new Vector3();
+
+    [Header("Dodging")] 
+    public float dodgeSpeed = 12f;
+    public float backstepSpeed = 3f;
+    public bool backstep;
+    public Vector3 dodgeDirection;
+    public float dodgeMaxCooldown = 1f;
+    public float actCooldown;
+    public bool isDodging;
     
     [Header("Turning")]
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
-    private Vector3 direction;
+    public Vector3 direction;
     
     [Header("Gravity Things")]
     public float _gravity = -9.81f;
@@ -36,12 +46,15 @@ public class ThirdPersonMovement : MonoBehaviour
     
     [Header("----------")]
     private Vector3 _input;
+    public float raycastLength = 1.1f;
+    public Transform transform;
    
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        currSpeed = 0f;
+        isGrounded = controller.isGrounded;
+        transform = GetComponent<Transform>();
     }
 
     private void Awake()
@@ -49,10 +62,15 @@ public class ThirdPersonMovement : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
+    private void FixedUpdate()
+    {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, raycastLength);
+    }
+
     private void Update()
     {
-        isGrounded = controller.isGrounded;
         Motivate();
+        dodgeManager();
     }
 
     void Motivate()
@@ -63,7 +81,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void getRotation()
     {
-        Vector3 moveDir = new Vector3();
         if (direction.magnitude >= 0.1)
         { 
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; 
@@ -107,9 +124,47 @@ public class ThirdPersonMovement : MonoBehaviour
 
         return currSpeed;
     }
-
+    private void dodgeManager()
+    {
+        
+        
+        if (Input.GetButton("Dodge"))
+        {
+            setDodgeType(); 
+            setDodgeDirection();
+            actCooldown = dodgeMaxCooldown;
+        }
+            
+        if (actCooldown > 0)
+        {
+            isDodging = true;
+            if (backstep)
+            {
+                controller.Move(dodgeDirection * backstepSpeed * Time.deltaTime);
+            }
+            else
+            {
+                controller.Move(dodgeDirection * dodgeSpeed * Time.deltaTime);
+            }
+            
+            actCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            isDodging = false;
+        }
+    }
+    private void setDodgeType()
+    {
+        if (direction.magnitude < 0.1f) backstep = true;
+        else backstep = false;
+    }
+    private void setDodgeDirection()
+    {
+        if (backstep) dodgeDirection = transform.forward * -1.0f;
+        else dodgeDirection = moveDir;
+    }
     
-
     void applyGravity()
     {
         if (isGrounded && _velocity < 0.0f) 
@@ -121,13 +176,11 @@ public class ThirdPersonMovement : MonoBehaviour
             _velocity += _gravity * _gravityMultiplyer * Time.deltaTime;
         }
     }
-
     public void move(InputAction.CallbackContext context) //called everytime there is an input from the InputManager
     {
         _input = context.ReadValue<Vector3>();
         direction = new Vector3(_input.x, 0f, _input.y).normalized;
     }
-
     public void jump(InputAction.CallbackContext context)
     {
         if (!context.started) return;
@@ -143,7 +196,10 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public void dodge(InputAction.CallbackContext context)
     {
-        
+        if (!isGrounded) return; //no dodging while falling
+        if (isDodging) return; //no dodging is already dodging
+
+        //isDodging = context.started || context.performed;
     }
 }
 
@@ -151,4 +207,5 @@ public class ThirdPersonMovement : MonoBehaviour
 public struct Movement
 {
     [HideInInspector] public bool isSprinting;
+     
 }
