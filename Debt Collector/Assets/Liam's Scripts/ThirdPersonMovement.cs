@@ -10,6 +10,10 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    [Header("Animations")] 
+    public Animator _animator;
+    public String animatorSpeed = "Speed";
+    
     [Header("Scene Items")]
     public CharacterController controller;
     public Transform cam;
@@ -20,6 +24,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float sprintSpeed = 12f;
     public float acceleration = 1.0f;
     public float decceleration = 1.0f;
+    public float sprintDecceleration = 2.0f;
     [SerializeField] public float jumpPower;
     [SerializeField] private Movement movement;
     public Vector3 moveDir = new Vector3();
@@ -29,9 +34,16 @@ public class ThirdPersonMovement : MonoBehaviour
     public float backstepSpeed = 3f;
     public bool backstep;
     public Vector3 dodgeDirection;
+    public float backstepMaxCooldown = 0.5f;
     public float dodgeMaxCooldown = 1f;
     public float actCooldown;
     public bool isDodging;
+
+    [Header("Attacking")] 
+    public float attackSpeed = 0f;
+    public bool isAttacking;
+    public float maxAttackCooldown;
+    public float attackCooldown;
     
     [Header("Turning")]
     public float turnSmoothTime = 0.1f;
@@ -47,14 +59,16 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("----------")]
     private Vector3 _input;
     public float raycastLength = 1.1f;
-    public Transform transform;
+    //public Transform transform;
    
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         isGrounded = controller.isGrounded;
-        transform = GetComponent<Transform>();
+        //transform = GetComponent<Transform>();
+        isAttacking = false;
+        isDodging = false;
     }
 
     private void Awake()
@@ -71,6 +85,7 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         Motivate();
         dodgeManager();
+        attackManager();
     }
 
     void Motivate()
@@ -102,37 +117,81 @@ public class ThirdPersonMovement : MonoBehaviour
     private float getSpeed()
     {
         float maxSpeed;
-        if (movement.isSprinting)
+        /*if (movement.isSprinting)
             maxSpeed = sprintSpeed;
         else
-            maxSpeed = speed;
+            maxSpeed = speed;*/
         if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
         {
             if (Input.GetButton("Sprint"))
                 maxSpeed = sprintSpeed;
+            else
+                maxSpeed = speed;
+
+            if (currSpeed > maxSpeed)
+            {
+                currSpeed -= Time.deltaTime * decceleration;
+                direction *= currSpeed;
+                currSpeed = Mathf.Clamp(currSpeed, 0f, sprintSpeed);
+            }
+            else
+            {
+                currSpeed += maxSpeed * Time.deltaTime * acceleration; 
+                direction *= currSpeed;
+                currSpeed = Mathf.Clamp(currSpeed, 0f, maxSpeed);
+            }
             
-            currSpeed += maxSpeed * Time.deltaTime * acceleration;
-            direction *= currSpeed;
-            currSpeed = Mathf.Clamp(currSpeed, 0f, maxSpeed);
+            /*if (currSpeed <= maxSpeed)
+            {
+                currSpeed -= Time.deltaTime * decceleration;
+                direction *= currSpeed;
+                currSpeed = Mathf.Clamp(currSpeed, 0f, sprintSpeed);
+            }*/
         }
         else
         {
             currSpeed -= Time.deltaTime * decceleration;
             direction *= currSpeed;
-            currSpeed = Mathf.Clamp(currSpeed, 0f, maxSpeed);
+            currSpeed = Mathf.Clamp(currSpeed, 0f, sprintSpeed);
         }
 
+        _animator.SetFloat(animatorSpeed, currSpeed);
         return currSpeed;
+    }
+
+    private void attackManager()
+    {
+        if (Input.GetButton("Attack") && !isAttacking)
+        {
+            attackCooldown = maxAttackCooldown;
+        }
+
+        if (attackCooldown > 0)
+        {
+            isAttacking = true;
+            Attack();
+            attackCooldown -= Time.deltaTime;
+        }
+        else
+        {
+            isAttacking = true;
+        }
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attack!");
     }
     private void dodgeManager()
     {
-        
-        
-        if (Input.GetButton("Dodge"))
+        if (Input.GetButton("Dodge") && !isDodging)
         {
             setDodgeType(); 
             setDodgeDirection();
-            actCooldown = dodgeMaxCooldown;
+            if (backstep)
+                actCooldown = backstepMaxCooldown;
+            else 
+                actCooldown = dodgeMaxCooldown;
         }
             
         if (actCooldown > 0)
@@ -188,12 +247,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
         _velocity += jumpPower;
     }
-
-    public void sprint(InputAction.CallbackContext context)
-    {
-        movement.isSprinting = context.started || context.performed;
-    }
-
     public void dodge(InputAction.CallbackContext context)
     {
         if (!isGrounded) return; //no dodging while falling
