@@ -18,7 +18,7 @@ public class EnemyLockOn : MonoBehaviour
     [SerializeField] float noticeZone = 10;
     [SerializeField] float lookAtSmoothing = 2;
     [Tooltip("Angle_Degree")] [SerializeField] float maxNoticeAngle = 60;
-    [SerializeField] float crossHair_Scale = 0.1f;
+    // [SerializeField] float crossHair_Scale = 0.1f;
 
     
     Transform cam;
