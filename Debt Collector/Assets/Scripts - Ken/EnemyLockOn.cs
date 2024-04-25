@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyLockOn : MonoBehaviour
 {
-    Transform currentTarget;
+    private Transform currentTarget;
+    private List<Transform> targetsInRange = new List<Transform>();
+    private int currentTargetIndex;
     // Animator anim;
 
     [SerializeField] LayerMask targetLayers;
@@ -42,10 +45,8 @@ public class EnemyLockOn : MonoBehaviour
     {
         // camFollow.lockedTarget = enemyLocked;
         // defMovement.lockMovement = enemyLocked;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            if (currentTarget != null)
-            {
+        if (Input.GetKeyDown(KeyCode.Tab)){
+            if (currentTarget != null){
                 //If there is already a target, Reset.
                 ResetTarget();
                 return;
@@ -53,6 +54,15 @@ public class EnemyLockOn : MonoBehaviour
             
             if (currentTarget = ScanNearBy()) FoundTarget(); else ResetTarget();
         }
+
+        if (Input.GetKeyDown(KeyCode.F)){
+            Debug.Log(currentTargetIndex);
+            if(targetsInRange.Count > 0){
+                currentTarget = targetsInRange[(currentTargetIndex + 1) % targetsInRange.Count];
+                currentTargetIndex++;
+            }
+        }
+
         if (enemyLocked) {
             // Debug.Log("currentTarget: " + currentTarget.position);
             // Debug.Log("TargetOnRange: " + TargetOnRange());
@@ -87,15 +97,22 @@ public class EnemyLockOn : MonoBehaviour
         Transform closestTarget = null;
         if (nearbyTargets.Length <= 0) return null;
 
+        // clear the list or array
+        targetsInRange.Clear();
         for (int i = 0; i < nearbyTargets.Length; i++)
         {
             Vector3 dir = nearbyTargets[i].transform.position - cam.position;
             dir.y = 0;
             float _angle = Vector3.Angle(cam.forward, dir);
             
+            // add the near nearbyTargets[i].transform to the list 
+            targetsInRange.Add(nearbyTargets[i].transform);
+
             if (_angle < closestAngle)
             {
                 closestTarget = nearbyTargets[i].transform;
+                // mark the currentTargetIndex as i
+                currentTargetIndex = i;
                 closestAngle = _angle;      
             }
         }
@@ -110,6 +127,8 @@ public class EnemyLockOn : MonoBehaviour
         Vector3 tarPos = closestTarget.position + new Vector3(0, currentYOffset, 0);
         if(Blocked(tarPos)) return null;
         // Debug.Log(closestTarget.position);
+
+        // return the transform of the closest target
         return closestTarget;
     }
 
