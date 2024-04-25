@@ -5,28 +5,20 @@ using Cinemachine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    public CinemachineVirtualCamera Camera1;
-    public CinemachineVirtualCamera Camera2;
-
-    private bool isCamera1Active = true;
+    public int transitionTo;
+    public int transitionFrom;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (isCamera1Active)
-            {
-                // Switch to the second camera
-                Camera1.Priority = 0;
-                Camera2.Priority = 10;
-                isCamera1Active = false;
-            }
-            else
-            {
-                // Switch back to the first camera
-                Camera1.Priority = 10;
-                Camera2.Priority = 0;
-                isCamera1Active = true;
+        if (other.CompareTag("Player")){
+            CharacterCameraState cameraState = other.GetComponent<CharacterCameraState>();
+            if (cameraState != null && CharacterCameraState.CurrentCamera == transitionFrom){
+                // Call the SwitchCamera method with the specified transitionTo value
+                cameraState.SwitchCamera(transitionTo);
+            } else if(cameraState != null && CharacterCameraState.CurrentCamera == transitionTo){
+                cameraState.SwitchCamera(transitionFrom);
+            } else {
+                Debug.Log("CharacterCameraState not found on the player.");
             }
         }
     }
