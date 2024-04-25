@@ -31,8 +31,7 @@ public class CollectionManager : MonoBehaviour {
     }
 
     public void itemUpdate(GameObject item) {
-        if (itemText != null) {
-            itemText.text = $"ITEM:\n{item.name}";
-        }
+        if (item != null)
+            itemText.text = $"ITEM:\n{item.transform.parent.name}";
     }
 }

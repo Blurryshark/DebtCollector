@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
     public static Transform playerTransform;
+    public static GameObject itemHolder;
     public static int playerHealth = 100; // static to be referenced by other enemy scripts.
     public int baseDamage = 10;
     public static GameObject currentItem = null;
     
     void Start() {
         playerTransform = GetComponent<Transform>();
+        itemHolder = GameObject.Find("itemHolder");
+        Debug.Log($"{itemHolder.transform}");
     }
 
     // Update is called once per frame
