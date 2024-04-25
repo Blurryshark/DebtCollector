@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemyLockOn : MonoBehaviour
 {
     Transform currentTarget;
-    // Animator anim;
+    List<Transform> enemiesInRange = new List<Transform>();
+    int currentTargetIndex = -1;
+    bool isCycling = false;
 
     [SerializeField] LayerMask targetLayers;
     [SerializeField] Transform enemyTarget_Locator;
-
-    [Tooltip("StateDrivenMethod for Switching Cameras")]
     [SerializeField] Animator cinemachineAnimator;
 
     [Header("Settings")]
@@ -18,128 +18,135 @@ public class EnemyLockOn : MonoBehaviour
     [SerializeField] float noticeZone = 10;
     [SerializeField] float lookAtSmoothing = 2;
     [Tooltip("Angle_Degree")] [SerializeField] float maxNoticeAngle = 60;
-    // [SerializeField] float crossHair_Scale = 0.1f;
 
-    
     Transform cam;
     bool enemyLocked;
     float currentYOffset;
     Vector3 pos;
 
-    // [SerializeField] CameraFollow camFollow;
-    // [SerializeField] Transform lockOnCanvas;
-    // DefMovement defMovement;
-
     void Start()
     {
-        // defMovement = GetComponent<DefMovement>();
-        // anim = GetComponent<Animator>();
         cam = Camera.main.transform;
-        // lockOnCanvas.gameObject.SetActive(false);
     }
 
     void Update()
     {
-        // camFollow.lockedTarget = enemyLocked;
-        // defMovement.lockMovement = enemyLocked;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (currentTarget != null)
-            {
-                //If there is already a target, Reset.
-                ResetTarget();
-                return;
-            }
-            
-            if (currentTarget = ScanNearBy()) FoundTarget(); else ResetTarget();
+            CycleOrResetTargets();
         }
         if (enemyLocked) {
-            // Debug.Log("currentTarget: " + currentTarget.position);
-            // Debug.Log("TargetOnRange: " + TargetOnRange());
-            // if(!TargetOnRange()) ResetTarget();
             LookAtTarget();
         }
-
     }
 
+    void CycleOrResetTargets()
+    {
+        if (!isCycling || currentTargetIndex == -1)
+        {
+            ScanAndUpdateTargets();
+            isCycling = true;
+        }
+        else
+        {
+            CycleTargets();
+        }
+    }
 
-    void FoundTarget(){
-        // lockOnCanvas.gameObject.SetActive(true);
-        // anim.SetLayerWeight(1, 1);
+    void ScanAndUpdateTargets()
+    {
+        Collider[] nearbyTargets = Physics.OverlapSphere(transform.position, noticeZone, targetLayers);
+        enemiesInRange.Clear();
+        foreach (Collider target in nearbyTargets)
+        {
+            if (IsValidTarget(target))
+            {
+                enemiesInRange.Add(target.transform);
+            }
+        }
+        if (enemiesInRange.Count > 0)
+        {
+            currentTargetIndex = 0;
+            currentTarget = enemiesInRange[currentTargetIndex];
+            FoundTarget();
+        }
+        else
+        {
+            ResetTarget();
+        }
+    }
+
+    bool IsValidTarget(Collider target)
+    {
+        Vector3 dir = target.transform.position - cam.position;
+        dir.y = 0;
+        float angle = Vector3.Angle(cam.forward, dir);
+        if (angle < maxNoticeAngle && !Blocked(target.transform.position))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    void CycleTargets()
+    {
+        if (currentTargetIndex < enemiesInRange.Count - 1)
+        {
+            currentTargetIndex++;
+            currentTarget = enemiesInRange[currentTargetIndex];
+            FoundTarget();
+        }
+        else
+        {
+            ResetTarget();
+            isCycling = false; // Stop cycling after one complete loop
+        }
+    }
+
+    void FoundTarget()
+    {
         cinemachineAnimator.Play("Target Camera");
         enemyLocked = true;
     }
 
     void ResetTarget()
     {
-        // lockOnCanvas.gameObject.SetActive(false);
         currentTarget = null;
         enemyLocked = false;
-        // anim.SetLayerWeight(1, 0);
         cinemachineAnimator.Play("Follow Camera");
     }
 
-
-    private Transform ScanNearBy()
+    bool Blocked(Vector3 targetPosition)
     {
-        Collider[] nearbyTargets = Physics.OverlapSphere(transform.position, noticeZone, targetLayers);
-        float closestAngle = maxNoticeAngle;
-        Transform closestTarget = null;
-        if (nearbyTargets.Length <= 0) return null;
-
-        for (int i = 0; i < nearbyTargets.Length; i++)
-        {
-            Vector3 dir = nearbyTargets[i].transform.position - cam.position;
-            dir.y = 0;
-            float _angle = Vector3.Angle(cam.forward, dir);
-            
-            if (_angle < closestAngle)
-            {
-                closestTarget = nearbyTargets[i].transform;
-                closestAngle = _angle;      
-            }
-        }
-
-        if (!closestTarget ) return null;
-        float h1 = closestTarget.GetComponent<CapsuleCollider>().height;
-        float h2 = closestTarget.localScale.y;
-        float h = h1 * h2;
-        float half_h = (h / 2) / 2;
-        currentYOffset = h - half_h;
-        if(zeroVert_Look && currentYOffset > 1.6f && currentYOffset < 1.6f * 3) currentYOffset = 1.6f;
-        Vector3 tarPos = closestTarget.position + new Vector3(0, currentYOffset, 0);
-        if(Blocked(tarPos)) return null;
-        // Debug.Log(closestTarget.position);
-        return closestTarget;
-    }
-
-    bool Blocked(Vector3 t){
         RaycastHit hit;
-        if(Physics.Linecast(transform.position + Vector3.up * 0.5f, t, out hit)){
-            if(!hit.transform.CompareTag("Enemy")) return true;
+        if (Physics.Linecast(cam.position, targetPosition, out hit))
+        {
+            return !hit.transform.CompareTag("Enemy");
         }
         return false;
     }
 
-    bool TargetOnRange(){
-        float dis = (transform.position - pos).magnitude;
-        if(dis/2 > noticeZone) return false; else return true;
-    }
-
-
     private void LookAtTarget()
     {
-        // Debug.Log("Look at target: " + currentTarget);
-        if(currentTarget == null) {
+        if (currentTarget == null)
+        {
             ResetTarget();
             return;
         }
-        pos = currentTarget.position + new Vector3(0, currentYOffset, 0);
-        // lockOnCanvas.position = pos;
-        // lockOnCanvas.localScale = Vector3.one * ((cam.position - pos).magnitude * crossHair_Scale);
-        // Debug.Log("pos: " + pos);
+        AdjustCameraFocus(currentTarget);
+    }
+
+    void AdjustCameraFocus(Transform target)
+    {
+        float height = target.GetComponent<CapsuleCollider>().height;
+        float scale = target.localScale.y;
+        float totalHeight = height * scale;
+        float yOffset = totalHeight - (totalHeight / 4);
+        if (zeroVert_Look && yOffset > 1.6f && yOffset < 1.6f * 3) 
+            yOffset = 1.6f;
+        pos = target.position + Vector3.up * yOffset;
         enemyTarget_Locator.position = pos;
-        Vector3 dir = currentTarget.position - transform.position;
+        Vector3 dir = target.position - transform.position;
         dir.y = 0;
         Quaternion rot = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * lookAtSmoothing);
@@ -147,6 +154,6 @@ public class EnemyLockOn : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, noticeZone);   
+        Gizmos.DrawWireSphere(transform.position, noticeZone);
     }
 }
