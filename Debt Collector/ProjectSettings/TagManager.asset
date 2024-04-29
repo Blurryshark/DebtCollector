@@ -8,6 +8,7 @@ TagManager:
   - Magnetized
   - Magnet
   - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
