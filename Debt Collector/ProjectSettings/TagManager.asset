@@ -9,6 +9,7 @@ TagManager:
   - Magnet
   - Item
   - Enemy
+  - PlayerMC
   layers:
   - Default
   - TransparentFX
