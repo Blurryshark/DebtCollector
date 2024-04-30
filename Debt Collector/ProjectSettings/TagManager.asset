@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Collectable
+  - Magnetized
+  - Magnet
+  - Item
   - Enemy
   layers:
   - Default
