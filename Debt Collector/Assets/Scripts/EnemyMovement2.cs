@@ -51,6 +51,8 @@ public class EnemyMovement2 : MonoBehaviour
         Vector3 dir = transform.position - target.position; // Reverse direction to move away
         float distance = dir.magnitude;
 
+        dir.y = 0f;
+
         // If the player is within range, move away from them
         if (distance <= range)
         {
