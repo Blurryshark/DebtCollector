@@ -10,9 +10,6 @@ TagManager:
   - Item
   - Enemy
   - PlayerMC
-  - SpeedUp
-  - HealthUp
-  - AttackUp
   layers:
   - Default
   - TransparentFX
