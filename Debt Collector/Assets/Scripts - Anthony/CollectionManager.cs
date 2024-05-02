@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CollectionManager : MonoBehaviour {
     public static CollectionManager instance;
-    public static double totalDebt = 1000.00;
+    public static int totalDebt = 100000;
     public TextMeshProUGUI debtText;
     [SerializeField]
     public TextMeshProUGUI itemText;
@@ -27,7 +27,7 @@ public class CollectionManager : MonoBehaviour {
     }
 
     private void moneyUpdate() {
-        debtText.text = $"DEBT:\n${totalDebt}";
+        debtText.text = $"{totalDebt:0000}";
     }
 
     public void itemUpdate(GameObject item) {
