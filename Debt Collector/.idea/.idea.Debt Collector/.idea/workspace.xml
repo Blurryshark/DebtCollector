@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs - Anthony/Pause Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs - Anthony/Pause Canvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Anthony - Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Anthony - Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu - Anthony.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu - Anthony.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts - Anthony/CollectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Anthony/CollectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +50,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Eleazar\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Eleazar\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Eleazar\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Antwo\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Antwo\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Antwo\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -112,6 +111,7 @@
       <workItem from="1713841699340" duration="8261000" />
       <workItem from="1714607273451" duration="1812000" />
       <workItem from="1714624959302" duration="4049000" />
+      <workItem from="1714685580919" duration="2699000" />
     </task>
     <servers />
   </component>
