@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerMC
+  - Collectable
+  - Magnetized
+  - Magnet
+  - Item
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
