@@ -227,6 +227,6 @@ MonoBehaviour:
   range: 8
   enemyTag: PlayerMC
   EnemyRotate: {fileID: 2202127653429774032}
-  turnSpeed: 10
+  turnSpeed: 200
   moveSpeed: 2
   stopDistance: 2

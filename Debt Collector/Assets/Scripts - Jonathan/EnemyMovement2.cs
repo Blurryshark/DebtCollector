@@ -48,7 +48,7 @@ public class EnemyMovement2 : MonoBehaviour
         if (target == null)
             return;
 
-        Vector3 dir = transform.position - target.position; // Reverse direction to move away
+        Vector3 dir = transform.position - target.position;
         float distance = dir.magnitude;
 
         dir.y = 0f;
@@ -56,12 +56,12 @@ public class EnemyMovement2 : MonoBehaviour
         // If the player is within range, move away from them
         if (distance <= range)
         {
-            // Rotate away from the target
+
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             Vector3 rotation = Quaternion.Lerp(EnemyRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
             EnemyRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-            // Move away from the target
+
             transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
         }
     }

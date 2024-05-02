@@ -51,6 +51,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         dir.y = 0f;
         float distance = dir.magnitude;
+        dir.y = 0;
 
         // If the player is within range, move towards it
         if (distance <= range)
