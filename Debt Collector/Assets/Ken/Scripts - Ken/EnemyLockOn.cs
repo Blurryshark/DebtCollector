@@ -157,7 +157,7 @@ public class EnemyLockOn : MonoBehaviour
             ResetTarget();
             return;
         }
-        pos = currentTarget.position + new Vector3(0, currentYOffset, 0);
+        pos = currentTarget.position + new Vector3(0, currentYOffset - 1, 0);
         // lockOnCanvas.position = pos;
         // lockOnCanvas.localScale = Vector3.one * ((cam.position - pos).magnitude * crossHair_Scale);
         // Debug.Log("pos: " + pos);
