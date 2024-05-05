@@ -12,9 +12,10 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     [Header("Animations")] 
     public Animator _animator;
-    public String animatorSpeed = "Speed";
-    public String animatorIsAttacking = "isAttacking";
-    public String animatorAttackType = "AttackType";
+    [HideInInspector]public String animatorSpeed = "Speed";
+    [HideInInspector]public String animatorIsAttacking = "isAttacking";
+    [HideInInspector]public String animatorAttackType = "AttackType";
+    [HideInInspector]public String animatorRolling = "Rolling";
     
     [Header("Scene Items")]
     public CharacterController controller;
@@ -42,12 +43,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isDodging;
 
     [Header("Attacking")] 
-    public float attackSpeed = 0f;
     public bool isAttacking;
     public int attackType; //0 = light attack, 1 = heavy attack
     public float maxAttackCooldown;
     public float maxHeavyAttackCooldown;
     public float attackCooldown;
+    public GameObject hitbox;
     
     [Header("Turning")]
     public float turnSmoothTime = 0.1f;
@@ -182,6 +183,11 @@ public class ThirdPersonMovement : MonoBehaviour
         if (isAttacking)
         {
             Attack();
+            hitbox.SetActive(true);
+        }
+        else
+        {
+            hitbox.SetActive(false);
         }
     }
 
@@ -206,7 +212,6 @@ public class ThirdPersonMovement : MonoBehaviour
             else 
                 actCooldown = dodgeMaxCooldown;
         }
-            
         if (actCooldown > 0)
         {
             isDodging = true;
@@ -218,13 +223,13 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 controller.Move(dodgeDirection * dodgeSpeed * Time.deltaTime);
             }
-            
             actCooldown -= Time.deltaTime;
         }
         else
         {
             isDodging = false;
         }
+        _animator.SetBool(animatorRolling, isDodging);
     }
     private void setDodgeType()
     {

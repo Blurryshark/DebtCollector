@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +25,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/enemyTestScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -105,6 +113,8 @@
       <workItem from="1713888634272" duration="634000" />
       <workItem from="1713907351999" duration="743000" />
       <workItem from="1714533409961" duration="1447000" />
+      <workItem from="1714584282016" duration="10186000" />
+      <workItem from="1714694062112" duration="1355000" />
     </task>
     <servers />
   </component>
@@ -121,13 +131,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs</url>
-          <line>228</line>
+          <line>233</line>
           <properties documentPath="C:\Users\viola\DebtCollector\Debt Collector\Assets\Liam's Scripts\ThirdPersonMovement.cs" initialLine="162" containingFunctionPresentation="Method 'setDodgeDirection'">
             <startOffsets>
-              <option value="6243" />
+              <option value="6488" />
             </startOffsets>
             <endOffsets>
-              <option value="6244" />
+              <option value="6489" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

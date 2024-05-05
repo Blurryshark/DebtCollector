@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyLockOn : MonoBehaviour
 {
-    private Transform currentTarget;
+    private Transform currentTarget; // transform of locked on target
     private List<Transform> targetsInRange = new List<Transform>();
     private int currentTargetIndex;
     // Animator anim;
@@ -15,6 +15,7 @@ public class EnemyLockOn : MonoBehaviour
 
     [Tooltip("StateDrivenMethod for Switching Cameras")]
     [SerializeField] Animator cinemachineAnimator;
+    
 
     [Header("Settings")]
     [SerializeField] bool zeroVert_Look;
@@ -22,7 +23,10 @@ public class EnemyLockOn : MonoBehaviour
     [SerializeField] float lookAtSmoothing = 2;
     [Tooltip("Angle_Degree")] [SerializeField] float maxNoticeAngle = 60;
     // [SerializeField] float crossHair_Scale = 0.1f;
-
+    
+    [Header("Character Animation")]
+    public Animator characterAnimator;
+    private String lockedOnField = "LockedOn";
     
     Transform cam;
     bool enemyLocked;
@@ -69,7 +73,7 @@ public class EnemyLockOn : MonoBehaviour
             // if(!TargetOnRange()) ResetTarget();
             LookAtTarget();
         }
-
+        characterAnimator.SetBool(lockedOnField, enemyLocked);
     }
 
 
