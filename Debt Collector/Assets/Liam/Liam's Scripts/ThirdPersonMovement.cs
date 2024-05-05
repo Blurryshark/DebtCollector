@@ -12,7 +12,10 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     [Header("Animations")] 
     public Animator _animator;
-    public String animatorSpeed = "Speed";
+    [HideInInspector]public String animatorSpeed = "Speed";
+    [HideInInspector]public String animatorIsAttacking = "isAttacking";
+    [HideInInspector]public String animatorAttackType = "AttackType";
+    [HideInInspector]public String animatorRolling = "Rolling";
     
     [Header("Scene Items")]
     public CharacterController controller;
@@ -40,10 +43,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool isDodging;
 
     [Header("Attacking")] 
-    public float attackSpeed = 0f;
     public bool isAttacking;
+    public int attackType; //0 = light attack, 1 = heavy attack
     public float maxAttackCooldown;
+    public float maxHeavyAttackCooldown;
     public float attackCooldown;
+    public GameObject hitbox;
     
     [Header("Turning")]
     public float turnSmoothTime = 0.1f;
@@ -117,10 +122,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private float getSpeed()
     {
         float maxSpeed;
-        /*if (movement.isSprinting)
-            maxSpeed = sprintSpeed;
-        else
-            maxSpeed = speed;*/
+        
         if (Input.GetButton("Vertical") || Input.GetButton("Horizontal"))
         {
             if (Input.GetButton("Sprint"))
@@ -130,7 +132,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
             if (currSpeed > maxSpeed)
             {
-                currSpeed -= Time.deltaTime * decceleration;
+                currSpeed -= Time.deltaTime * sprintDecceleration;
                 direction *= currSpeed;
                 currSpeed = Mathf.Clamp(currSpeed, 0f, sprintSpeed);
             }
@@ -140,13 +142,6 @@ public class ThirdPersonMovement : MonoBehaviour
                 direction *= currSpeed;
                 currSpeed = Mathf.Clamp(currSpeed, 0f, maxSpeed);
             }
-            
-            /*if (currSpeed <= maxSpeed)
-            {
-                currSpeed -= Time.deltaTime * decceleration;
-                direction *= currSpeed;
-                currSpeed = Mathf.Clamp(currSpeed, 0f, sprintSpeed);
-            }*/
         }
         else
         {
@@ -163,24 +158,48 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if (Input.GetButton("Attack") && !isAttacking)
         {
+            attackType = 0;
             attackCooldown = maxAttackCooldown;
+        } else if (Input.GetButton("Heavy Attack") && !isAttacking)
+        {
+            attackType = 1;
+            attackCooldown = maxHeavyAttackCooldown;
         }
 
         if (attackCooldown > 0)
         {
             isAttacking = true;
-            Attack();
             attackCooldown -= Time.deltaTime;
         }
         else
         {
-            isAttacking = true;
+            attackType = -1;
+            isAttacking = false;
+        }
+        
+        _animator.SetBool(animatorIsAttacking, isAttacking);
+        _animator.SetInteger(animatorAttackType, attackType);
+
+        if (isAttacking)
+        {
+            Attack();
+            hitbox.SetActive(true);
+        }
+        else
+        {
+            hitbox.SetActive(false);
         }
     }
 
     private void Attack()
     {
-        Debug.Log("Attack!");
+        if (attackType == 0)
+        {
+            Debug.Log("Light Attack");
+        } else if (attackType == 1)
+        {
+            Debug.Log("Heavy Attack");
+        }
     }
     private void dodgeManager()
     {
@@ -193,7 +212,6 @@ public class ThirdPersonMovement : MonoBehaviour
             else 
                 actCooldown = dodgeMaxCooldown;
         }
-            
         if (actCooldown > 0)
         {
             isDodging = true;
@@ -205,13 +223,13 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 controller.Move(dodgeDirection * dodgeSpeed * Time.deltaTime);
             }
-            
             actCooldown -= Time.deltaTime;
         }
         else
         {
             isDodging = false;
         }
+        _animator.SetBool(animatorRolling, isDodging);
     }
     private void setDodgeType()
     {

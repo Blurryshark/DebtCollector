@@ -12,6 +12,14 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +33,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts - Anthony/TitleAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/enemyTestScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -112,6 +122,11 @@
       <workItem from="1714607273451" duration="1812000" />
       <workItem from="1714624959302" duration="4049000" />
       <workItem from="1714685580919" duration="2699000" />
+      <workItem from="1713888634272" duration="634000" />
+      <workItem from="1713907351999" duration="743000" />
+      <workItem from="1714533409961" duration="1447000" />
+      <workItem from="1714584282016" duration="10186000" />
+      <workItem from="1714694062112" duration="1355000" />
     </task>
     <servers />
   </component>
@@ -128,8 +143,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs</url>
-          <line>221</line>
-          <properties documentPath="C:\Users\viola\DebtCollector\Debt Collector\Assets\Liam's Scripts\ThirdPersonMovement.cs" initialLine="162" containingFunctionPresentation="Method 'setDodgeDirection'" />
+          <line>233</line>
+          <properties documentPath="C:\Users\viola\DebtCollector\Debt Collector\Assets\Liam's Scripts\ThirdPersonMovement.cs" initialLine="162" containingFunctionPresentation="Method 'setDodgeDirection'">
+            <startOffsets>
+              <option value="6488" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6489" />
+            </endOffsets>
+          </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
