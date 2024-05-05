@@ -27,7 +27,7 @@ public class CollectionManager : MonoBehaviour {
     }
 
     private void moneyUpdate() {
-        debtText.text = $"{totalDebt:0000}";
+        debtText.text = $"{totalDebt:000000}";
     }
 
     public void itemUpdate(GameObject item) {
