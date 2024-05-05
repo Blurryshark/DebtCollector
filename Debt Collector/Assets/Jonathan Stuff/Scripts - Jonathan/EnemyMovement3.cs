@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement3 : MonoBehaviour
 {
     private Transform target;
     public float range = 15f;
@@ -10,13 +11,19 @@ public class EnemyMovement : MonoBehaviour
     public Transform EnemyRotate;
     public float turnSpeed = 10f;
     public float moveSpeed = 5f;
-    public float stopDistance = 2f; // Distance at which the enemy stops moving towards the player
+    public float stopDistance = 2f;
 
     private bool hasHitPlayer = false;
+    private bool hasCharged = false;
+
+    Animator animator;
+    BoxCollider boxCollider;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        animator = GetComponent<Animator>();
+        boxCollider = GetComponentInChildren<BoxCollider>();
     }
 
     void UpdateTarget()
@@ -52,23 +59,23 @@ public class EnemyMovement : MonoBehaviour
         float distance = dir.magnitude;
         dir.y = 0;
 
-        // If the player is within range, move towards it
         if (distance <= range)
         {
-            // Rotate towards the target
             Quaternion lookRotation = Quaternion.LookRotation(dir);
             Vector3 rotation = Quaternion.RotateTowards(EnemyRotate.rotation, lookRotation, turnSpeed * Time.deltaTime).eulerAngles;
             EnemyRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-            // If the distance to the target is greater than the stopping distance, move towards it
             if (distance > stopDistance)
             {
                 transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
+                hasCharged = false;
             }
-            else if (!hasHitPlayer) // Check if the enemy has hit the player and hasn't already logged it
+            else if (!hasHitPlayer && !hasCharged)
             {
-                Debug.Log("Player is hit");
-                hasHitPlayer = true; // Set hasHitPlayer to true to prevent duplicate logging
+                Debug.Log("Sphere Attacked");
+                hasHitPlayer = true;
+                attack();
+                hasCharged = true;
             }
         }
     }
@@ -79,11 +86,27 @@ public class EnemyMovement : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+    void attack()
+    {
+        animator.SetTrigger("Attack");
+    }
+    void EnableAttack()
+    {
+        Debug.Log("Collider enabled.");
+        boxCollider.enabled = true;
+    }
+    void DisableAttack()
+    {
+        Debug.Log("Collider disabled.");
+        boxCollider.enabled = false;
+    }
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(enemyTag)) // Check if the collided object is the player capsule
+        if (other.CompareTag("PlayerMC"))
         {
             Debug.Log("Player is hit");
         }
     }
+
+
 }

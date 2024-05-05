@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86c8362c-6265-4efc-974e-7584718ec697" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/Enemy.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/Enemy.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/Enemy2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/Enemy2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/MainTarget.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material - Jonathan/MainTarget.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab - Jonathan.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab - Jonathan/Enemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab - Jonathan/Enemy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab - Jonathan/Enemy2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab - Jonathan/Enemy2.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Anthony - Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Anthony - Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Jon-Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Jon-Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Jonathan - Enemy AI movement.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Jonathan - Enemy AI movement.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Liam's Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Liam's Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Test Scene Ken.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes - Jonathan/Test Scene Ken.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/CharacterMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/CharacterMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/EnemyMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/EnemyMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/EnemyMovement2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/EnemyMovement2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/TriggerSpawn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/TriggerSpawn.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/TriggerSpawn2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Jonathan/TriggerSpawn2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Ken/DefMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Ken/DefMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Combo Punch.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Head Hit.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Left Strafe Walking.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Punching.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Right Strafe Walking.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Walking.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;JonBarroso&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Blurryshark/DebtCollector.git&quot;,
+    &quot;accountId&quot;: &quot;4fd23365-7228-4bfc-8b8f-55bcb434b157&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2fuO2mH4gVylv0MDf5u26uMXlRI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "#11 on test/JonathanBarroso",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86c8362c-6265-4efc-974e-7584718ec697" name="Changes" comment="" />
+      <created>1714647292568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714647292568</updated>
+    </task>
+    <servers />
+  </component>
+</project>
