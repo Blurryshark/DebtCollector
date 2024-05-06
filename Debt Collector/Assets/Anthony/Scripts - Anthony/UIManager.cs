@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public void EndGame() {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         HUDCanvas.SetActive(false);
         healthBarCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);

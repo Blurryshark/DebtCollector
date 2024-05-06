@@ -6,17 +6,24 @@ public class KenPlayerManager : MonoBehaviour
 {
     public int maxHealth = 100;
     public HealthBar healthBar;
+    
 
     private int currentHealth;
     private bool isSpedUp;
     private ThirdPersonMovement thirdPersonMovement;
+    private UIManager uiManager;
+    private ParticleSystem  speedParticle;
+    private ParticleSystem  healthParticle;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         isSpedUp = false;
         thirdPersonMovement = GetComponent<ThirdPersonMovement>();
+        uiManager = GetComponent<UIManager>();
         healthBar.SliderMaxHealth(maxHealth);
+        speedParticle = transform.Find("Speed Particle Effect").GetComponent<ParticleSystem>();
+        healthParticle = transform.Find("Health Particle Effect").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -61,6 +68,7 @@ public class KenPlayerManager : MonoBehaviour
         isSpedUp = true;
         thirdPersonMovement.speed = thirdPersonMovement.speed + 5;
         thirdPersonMovement.sprintSpeed = thirdPersonMovement.sprintSpeed + 5;
+        speedParticle.Play();
 
         // Wait for 10 seconds
         yield return new WaitForSeconds(10);
@@ -68,6 +76,8 @@ public class KenPlayerManager : MonoBehaviour
         isSpedUp = false;
         thirdPersonMovement.speed = thirdPersonMovement.speed - 5;
         thirdPersonMovement.sprintSpeed = thirdPersonMovement.sprintSpeed - 5;
+        
+        
     }
 
     void TakeDamage(int damage)
@@ -78,6 +88,11 @@ public class KenPlayerManager : MonoBehaviour
             currentHealth = 0;
         }
         Debug.Log("Took Damage, Health Now At: " + currentHealth);
+
+        if(currentHealth == 0){
+            //End the game
+            uiManager.EndGame();
+        }
     }
 
     void Heal(int healAmount)
@@ -89,5 +104,6 @@ public class KenPlayerManager : MonoBehaviour
         }
         Debug.Log("Healed, Health Now At: " + currentHealth);
         healthBar.SetHealth(currentHealth);
+        healthParticle.Play();
     }
 }

@@ -20,10 +20,9 @@ public class Collectable : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log($"Collision");
-
         if (other.CompareTag("Player")) {
             CollectionManager.totalDebt -= value;
+            Debug.Log("Total Debt: " + CollectionManager.totalDebt);
             if (gameObject.CompareTag("Magnetized"))
                 Destroy(gameObject, 0.5f);
             else
