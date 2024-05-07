@@ -12,13 +12,13 @@ public class CollectionManager : MonoBehaviour {
     public TextMeshProUGUI itemText;
     
     void Awake() {
-        if (instance == null) {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else {
-            Destroy(gameObject);
-        }
+        // if (instance == null) {
+        //     instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
+        // else {
+        //     Destroy(gameObject);
+        // }
     }
 
     void LateUpdate() {

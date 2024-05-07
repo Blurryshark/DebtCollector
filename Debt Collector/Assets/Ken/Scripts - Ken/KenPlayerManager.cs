@@ -6,7 +6,6 @@ public class KenPlayerManager : MonoBehaviour
 {
     public int maxHealth = 100;
     public HealthBar healthBar;
-    
 
     private int currentHealth;
     private bool isSpedUp;
@@ -33,6 +32,10 @@ public class KenPlayerManager : MonoBehaviour
         {
             TakeDamage(25);
             healthBar.SetHealth(currentHealth);
+        }
+
+        if(uiManager.gameLost){
+            
         }
     }
 

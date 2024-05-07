@@ -11,8 +11,8 @@ public class PlayerManager : MonoBehaviour {
     
     void Start() {
         playerTransform = GetComponent<Transform>();
-        itemHolder = GameObject.Find("itemHolder");
-        Debug.Log($"{itemHolder.transform}");
+        // itemHolder = GameObject.Find("itemHolder");
+        // Debug.Log($"{itemHolder.transform}");
     }
 
     // Update is called once per frame

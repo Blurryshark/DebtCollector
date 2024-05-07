@@ -9,10 +9,13 @@ public class UIManager : MonoBehaviour {
     public GameObject healthBarCanvas;
     public GameObject pauseCanvas;
     public GameObject gameOverCanvas;
-    private bool isPaused = false;
+    private bool isPaused;
+    [HideInInspector]public bool gameLost;
     
     void Start() {
-        
+        isPaused = false;
+        gameLost = false;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -45,13 +48,23 @@ public class UIManager : MonoBehaviour {
     }
 
     public void EndGame() {
-        Time.timeScale = 1f;
+        gameLost = true;
+        
         HUDCanvas.SetActive(false);
         healthBarCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
+        StartCoroutine(WaitForAnimation());
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Restart() {
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator WaitForAnimation()
+    {
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0f;
     }
 }

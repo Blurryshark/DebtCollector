@@ -195,10 +195,10 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         if (attackType == 0)
         {
-            Debug.Log("Light Attack");
+            // Debug.Log("Light Attack");
         } else if (attackType == 1)
         {
-            Debug.Log("Heavy Attack");
+            // Debug.Log("Heavy Attack");
         }
     }
     private void dodgeManager()
