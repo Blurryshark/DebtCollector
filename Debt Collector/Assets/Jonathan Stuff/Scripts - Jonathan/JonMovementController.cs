@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CharacterController : MonoBehaviour
+public class JonMovementController : MonoBehaviour
 {
 
     public float acceleration = 10f;

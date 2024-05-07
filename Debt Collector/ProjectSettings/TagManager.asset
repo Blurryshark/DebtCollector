@@ -9,6 +9,10 @@ TagManager:
   - Magnet
   - Item
   - Enemy
+  - PlayerMC
+  - SpeedUp
+  - HealthUp
+  - AttackUp
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - Post Processing
   - 
   - 
   - 

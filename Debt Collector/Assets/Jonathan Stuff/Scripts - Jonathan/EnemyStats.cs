@@ -6,6 +6,7 @@ public class EnemyStats : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public GameObject[] CollectableDrops;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class EnemyStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            CollectableDrop();
         }
     }
 
@@ -25,5 +27,18 @@ public class EnemyStats : MonoBehaviour
     {
         Debug.Log("Player died.");
         Destroy(gameObject);
+    }
+    private void CollectableDrop()
+    {
+        for(int i = 0; i < CollectableDrops.Length; i++)
+        {
+            int amount = Random.Range(1, 11);
+            for (int j = 0; j< amount; j++)
+            {
+                Vector3 spawnPosition = transform.position + new Vector3(Random.insideUnitCircle.x, 0f, Random.insideUnitCircle.y) * 0.8f;
+                Instantiate(CollectableDrops[i], spawnPosition, Quaternion.identity);
+            }
+            
+        }
     }
 }

@@ -53,6 +53,7 @@ public class EnemyMovement2 : MonoBehaviour
 
         dir.y = 0f;
 
+        // If the player is within range, move away from them
         if (distance <= range)
         {
 

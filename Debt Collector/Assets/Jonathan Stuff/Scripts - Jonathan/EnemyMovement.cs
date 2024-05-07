@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public float range = 15f;
     public string enemyTag = "PlayerMC";
     public Transform EnemyRotate;
-    public float turnSpeed = 10f;
+    public float turnSpeed = 200f;
     public float moveSpeed = 5f;
     public float stopDistance = 2f; // Distance at which the enemy stops moving towards the player
 
@@ -49,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
             return;
 
         Vector3 dir = target.position - transform.position;
+        dir.y = 0f;
         float distance = dir.magnitude;
         dir.y = 0;
 
