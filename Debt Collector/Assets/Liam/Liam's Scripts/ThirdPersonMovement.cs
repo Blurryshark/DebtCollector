@@ -48,7 +48,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float maxAttackCooldown;
     public float maxHeavyAttackCooldown;
     public float attackCooldown;
-    public GameObject hitbox;
+    public GameObject punchHitbox;
+    public GameObject kickHitbox;
     
     [Header("Turning")]
     public float turnSmoothTime = 0.1f;
@@ -88,9 +89,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Update()
     {
-        Motivate();
-        dodgeManager();
-        attackManager();
+        if (_animator.isActiveAndEnabled)
+        {
+            Motivate();
+            dodgeManager(); 
+            attackManager();
+        }
     }
 
     void Motivate()
@@ -182,23 +186,18 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (isAttacking)
         {
-            Attack();
-            hitbox.SetActive(true);
+            if (attackType == 0)
+            {
+                punchHitbox.SetActive(true);
+            } else if (attackType == 1)
+            {
+                kickHitbox.SetActive(true);
+            }
         }
         else
         {
-            hitbox.SetActive(false);
-        }
-    }
-
-    private void Attack()
-    {
-        if (attackType == 0)
-        {
-            // Debug.Log("Light Attack");
-        } else if (attackType == 1)
-        {
-            // Debug.Log("Heavy Attack");
+            punchHitbox.SetActive(false);
+            kickHitbox.SetActive(false);
         }
     }
     private void dodgeManager()

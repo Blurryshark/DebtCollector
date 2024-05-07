@@ -1,74 +1,78 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement2 : MonoBehaviour
 {
-    private Transform target;
-    public float range = 15f;
+    [Header("Detection")] 
+    public float detectionRange = 15f;
 
-    public string enemyTag = "PlayerMC";
+    public float distanceToPlayer;
+    public Transform player;
+    
+    [Header("Animation")] 
+    public Animator _animator;
+    public String animatorSpeed = "Speed";
 
-    public Transform EnemyRotate;
-
-    public float turnSpeed = 10f;
-    public float moveSpeed = 5f;
+    [Header("Movement")] 
+    public NavMeshAgent enemy;
+    public float speed = 15f;
+    public float currSpeed;
+    
 
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
-    }
-
-    void UpdateTarget()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float furthestDistance = 0f;
-        GameObject furthestEnemy = null;
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy > furthestDistance)
-            {
-                furthestDistance = distanceToEnemy;
-                furthestEnemy = enemy;
-            }
-        }
-        if (furthestEnemy != null && furthestDistance <= range)
-        {
-            target = furthestEnemy.transform;
-        }
-        else
-        {
-            target = null;
-        }
+        enemy.speed = speed;
     }
 
     void Update()
     {
-        if (target == null)
-            return;
-
-        Vector3 dir = transform.position - target.position;
-        float distance = dir.magnitude;
-
-        dir.y = 0f;
-
-        // If the player is within range, move away from them
-        if (distance <= range)
+        if (_animator.enabled == false)
         {
-
-            Quaternion lookRotation = Quaternion.LookRotation(dir);
-            Vector3 rotation = Quaternion.Lerp(EnemyRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-            EnemyRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-
-            transform.Translate(dir.normalized * moveSpeed * Time.deltaTime, Space.World);
+            return;
         }
+        updateDistance();
+        locomotion();
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("fuck");
+        _animator.enabled = false;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        _animator.enabled = false;
+    }
+    void locomotion()
+    {
+        currSpeed = enemy.velocity.magnitude;
+        if (distanceToPlayer <= detectionRange)
+        { 
+            Vector3 directionToPlayer = transform.position - player.transform.position; 
+            Vector3 directionToRun = transform.position + directionToPlayer;
+            enemy.SetDestination(directionToRun);
+        }
+
+        _animator.SetFloat(animatorSpeed, currSpeed);
+    }
+    public void updateDistance()
+    {
+        Vector3 enemyXZ = getXZVector(transform);
+        Vector3 playerXZ = getXZVector(player.transform);
+                
+        distanceToPlayer = Vector3.Distance(enemyXZ, playerXZ);
+    }
+    private Vector3 getXZVector(Transform input)
+    {
+        Vector3 pos = input.position;
+        return new Vector3(pos.x, 0, pos.z);
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

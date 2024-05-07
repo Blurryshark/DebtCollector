@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KenPlayerManager : MonoBehaviour
@@ -7,7 +9,7 @@ public class KenPlayerManager : MonoBehaviour
     public int maxHealth = 100;
     public HealthBar healthBar;
 
-    private int currentHealth;
+    public int currentHealth;
     private bool isSpedUp;
     private ThirdPersonMovement thirdPersonMovement;
     private UIManager uiManager;
@@ -31,7 +33,6 @@ public class KenPlayerManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T))
         {
             TakeDamage(25);
-            healthBar.SetHealth(currentHealth);
         }
 
         if(uiManager.gameLost){
@@ -41,6 +42,13 @@ public class KenPlayerManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            if (!thirdPersonMovement.isDodging)
+            {
+                TakeDamage(25);
+            }
+        }
         // Check if the other is a "SpeedUp"
         if (other.CompareTag("SpeedUp")){
             Debug.Log("Player Speed Up");
@@ -96,7 +104,14 @@ public class KenPlayerManager : MonoBehaviour
             //End the game
             uiManager.EndGame();
         }
+        if (currentHealth <= 0)
+        {
+            thirdPersonMovement._animator.enabled = false;
+        }
+        healthBar.SetHealth(currentHealth);
     }
+
+    
 
     void Heal(int healAmount)
     {   
