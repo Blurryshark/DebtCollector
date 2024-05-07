@@ -6,20 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs - Anthony/Pause Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs - Anthony/Pause Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Anthony - Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Anthony - Scene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Anthony/CollectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Anthony/CollectionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures - Anthony/Bauhaus 93 Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Armature.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Prefabs/Liam'sAnimationController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scene Junchen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts - Ken/EnemyLockOn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Roundhouse Kick.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/animations/Punch Combo.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/EnemyAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/EnemyAnimationController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerStats.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerStats.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene Ken.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scene Ken.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Combo Punch.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/animations/Ch19_nonPBR@Combo Punch.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/enemyTestScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/enemyTestScript.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,11 +24,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts - Anthony/TitleAnimation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts - Anthony/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/enemyTestScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Liam/Liam's Scripts/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -45,27 +36,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Anthony-Collection",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Liamm&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Antwo\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Antwo\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Antwo\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\viola\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\viola\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\viola\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.18f1\Editor\Unity.exe" />
@@ -127,6 +118,8 @@
       <workItem from="1714533409961" duration="1447000" />
       <workItem from="1714584282016" duration="10186000" />
       <workItem from="1714694062112" duration="1355000" />
+      <workItem from="1714949717095" duration="6998000" />
+      <workItem from="1715055309719" duration="12229000" />
     </task>
     <servers />
   </component>
@@ -144,14 +137,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Liam's Scripts/ThirdPersonMovement.cs</url>
           <line>233</line>
-          <properties documentPath="C:\Users\viola\DebtCollector\Debt Collector\Assets\Liam's Scripts\ThirdPersonMovement.cs" initialLine="162" containingFunctionPresentation="Method 'setDodgeDirection'">
-            <startOffsets>
-              <option value="6488" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6489" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="C:\Users\viola\DebtCollector\Debt Collector\Assets\Liam's Scripts\ThirdPersonMovement.cs" initialLine="162" containingFunctionPresentation="Method 'setDodgeDirection'" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
