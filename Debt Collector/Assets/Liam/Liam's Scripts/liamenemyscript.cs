@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -36,6 +37,8 @@ public class liamenemyscript : MonoBehaviour
     public float currPause;
     public bool isAttacking;
     public int attackType = -1;
+    public GameObject punchHitbox;
+    public GameObject kickHitbox;
         
     void Start()
     {
@@ -47,6 +50,10 @@ public class liamenemyscript : MonoBehaviour
 
     void Update()
     {
+        if (_animator.enabled == false)
+        {
+            return;
+        }
         updateDistance();
         locomotion();
         attackManager();
@@ -80,6 +87,7 @@ public class liamenemyscript : MonoBehaviour
                 if (currAttackCooldown <= 0)
                 {
                     isAttacking = false;
+                    attackType = -1;
                     currPause = maxPause;
                     return;
                 }
@@ -100,8 +108,39 @@ public class liamenemyscript : MonoBehaviour
         }
         _animator.SetBool(animatorIsAttacking, isAttacking);
         _animator.SetInteger(animatorAttackType, attackType);
+        hitboxManager();
+        
     }
 
+   
+
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("fuck");
+        _animator.enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        _animator.enabled = false;
+    }
+
+    void hitboxManager()
+    {
+        if (!isAttacking)
+        {
+            punchHitbox.SetActive(false);
+            kickHitbox.SetActive(false);
+        } else if (attackType == 1)
+        {
+            punchHitbox.SetActive(true);
+            kickHitbox.SetActive(false);
+        } else if (attackType == 2)
+        {
+            punchHitbox.SetActive(false);
+            kickHitbox.SetActive(true);
+        }
+    }
     int getAttackType()
     {
         return Random.Range(1, 3); //1-punch, 2-kick
@@ -115,7 +154,7 @@ public class liamenemyscript : MonoBehaviour
             if (inRange())
             {
                 enemy.ResetPath();
-                Debug.Log("attack!");
+                //Debug.Log("attack!");
                 //attack
                 return;
             }
