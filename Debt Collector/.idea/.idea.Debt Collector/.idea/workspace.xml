@@ -6,15 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Jonathan/Scripts - Jonathan/EnemyMovement2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jonathan/Scripts - Jonathan/EnemyMovement2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ken/Scripts - Ken/KenPlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ken/Scripts - Ken/KenPlayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/EnemyAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/EnemyAnimationController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player (w_ camera).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player (w_ camera).prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/liamenemyscript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/liamenemyscript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Scene Ken.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Scene Ken.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +117,7 @@
       <workItem from="1714694062112" duration="1355000" />
       <workItem from="1714949717095" duration="6998000" />
       <workItem from="1715055309719" duration="12229000" />
-      <workItem from="1715069209069" duration="11819000" />
+      <workItem from="1715069209069" duration="12897000" />
     </task>
     <servers />
   </component>

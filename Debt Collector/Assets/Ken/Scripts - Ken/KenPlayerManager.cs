@@ -34,7 +34,10 @@ public class KenPlayerManager : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            TakeDamage(25);
+            if (!thirdPersonMovement.isDodging)
+            {
+                TakeDamage(25);
+            }
         }
         // Check if the other is a "SpeedUp"
         if (other.CompareTag("SpeedUp")){

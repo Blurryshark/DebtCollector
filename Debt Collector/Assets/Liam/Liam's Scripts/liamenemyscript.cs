@@ -116,13 +116,19 @@ public class liamenemyscript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("fuck");
-        _animator.enabled = false;
+        if (other.gameObject.tag == "Enemy")
+        {
+            _animator.enabled = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        _animator.enabled = false;
+        if (other.gameObject.tag == "Enemy")
+        {
+            _animator.enabled = false;
+        }
+        
     }
 
     void hitboxManager()
