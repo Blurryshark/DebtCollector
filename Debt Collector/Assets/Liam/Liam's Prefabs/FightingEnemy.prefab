@@ -4041,6 +4041,10 @@ MonoBehaviour:
   attackType: -1
   punchHitbox: {fileID: 8121056703446158495}
   kickHitbox: {fileID: 6547893354277003820}
+  currHealth: 0
+  maxHealth: 1
+  CollectableDrops:
+  - {fileID: 5909957938947401320, guid: 37fce6300194e1a4bb55736da8b072c5, type: 3}
 --- !u!195 &5847479019204388242
 NavMeshAgent:
   m_ObjectHideFlags: 0

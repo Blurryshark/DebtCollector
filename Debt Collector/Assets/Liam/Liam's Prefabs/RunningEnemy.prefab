@@ -1905,6 +1905,10 @@ MonoBehaviour:
   enemy: {fileID: 424909884749633918}
   speed: 15
   currSpeed: 0
+  CollectableDrops:
+  - {fileID: 1261626011144327144, guid: 65b6b23f4d3d10a459a0ef876c247a3a, type: 3}
+  upperBoundOfDrops: 11
+  lowerBoundOfDrops: 1
 --- !u!195 &424909884749633918
 NavMeshAgent:
   m_ObjectHideFlags: 0

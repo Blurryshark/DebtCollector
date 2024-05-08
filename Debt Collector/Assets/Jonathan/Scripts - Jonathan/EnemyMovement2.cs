@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement2 : MonoBehaviour
 {
@@ -15,16 +17,22 @@ public class EnemyMovement2 : MonoBehaviour
     [Header("Animation")] 
     public Animator _animator;
     public String animatorSpeed = "Speed";
+    private CharacterController controller;
 
     [Header("Movement")] 
     public NavMeshAgent enemy;
     public float speed = 15f;
     public float currSpeed;
-    
+
+    [Header("Drops")]
+    public GameObject[] CollectableDrops;
+    public int upperBoundOfDrops = 11;
+    public int lowerBoundOfDrops = 1;
 
     void Start()
     {
         enemy.speed = speed;
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -38,14 +46,33 @@ public class EnemyMovement2 : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("fuck");
+        if(other.gameObject.tag == "Enemy")
         _animator.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        _animator.enabled = false;
+        if(other.gameObject.tag == "Enemy"){
+            _animator.enabled = false;
+            CollectableDrop();
+            controller.enabled = false;
+        }
     }
+
+    void CollectableDrop()
+    {
+        foreach(GameObject collectable in CollectableDrops)
+        {
+            int amount = Random.Range(lowerBoundOfDrops, upperBoundOfDrops);
+            for (int j = 0; j< amount; j++)
+            {
+                Vector3 spawnPosition = transform.position + new Vector3(Random.insideUnitCircle.x, 1f, Random.insideUnitCircle.y) * 0.8f;
+                Instantiate(collectable, spawnPosition, Quaternion.identity);
+            }
+            
+        }
+    }
+
     void locomotion()
     {
         currSpeed = enemy.velocity.magnitude;

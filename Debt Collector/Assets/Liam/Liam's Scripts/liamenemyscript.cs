@@ -20,6 +20,7 @@ public class liamenemyscript : MonoBehaviour
     public String animatorIsAttacking = "isAttacking";
     public String animatorAttackType = "AttackType";
     public float velocity;
+    private CharacterController controller;
 
     [Header("Locomotion")] 
     public float moveSpeed = 13f;
@@ -43,6 +44,11 @@ public class liamenemyscript : MonoBehaviour
     [Header("Health")] 
     public int currHealth;
     public int maxHealth = 1;
+
+    [Header("Drops")]
+    public GameObject[] CollectableDrops;
+    public int upperBoundOfDrops = 11;
+    public int lowerBoundOfDrops = 1;
     
     void Start()
     {
@@ -50,7 +56,8 @@ public class liamenemyscript : MonoBehaviour
         enemy.speed = moveSpeed;
         isAttacking = false;
         currPause = maxPause;
-        currHealth = maxHealth; 
+        currHealth = maxHealth;
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -70,8 +77,28 @@ public class liamenemyscript : MonoBehaviour
 
     void death()
     {
-        _animator.enabled = false;
+        Debug.Log("Drop Money");
+        if(_animator.enabled){
+            _animator.enabled = false;
+        }
+        
     }
+
+    void CollectableDrop()
+    {
+        
+        foreach(GameObject collectable in CollectableDrops)
+        {
+            int amount = Random.Range(lowerBoundOfDrops, upperBoundOfDrops);
+            for (int j = 0; j< amount; j++)
+            {
+                Vector3 spawnPosition = transform.position + new Vector3(Random.insideUnitCircle.x, 1f, Random.insideUnitCircle.y) * 0.8f;
+                Instantiate(collectable, spawnPosition, Quaternion.identity);
+            }
+            
+        }
+    }
+
     void updateDistance()
     {
         Vector3 enemyXZ = getXZVector(transform);
@@ -141,6 +168,12 @@ public class liamenemyscript : MonoBehaviour
         {
             _animator.enabled = false;
             currHealth -= 1;
+            CollectableDrop();
+            // Deactivate the Character Controller
+            controller.enabled = false;
+            // Deactivate the Kick and Punch hitboxes
+            punchHitbox.SetActive(false);
+            kickHitbox.SetActive(false);
         }
         
     }
