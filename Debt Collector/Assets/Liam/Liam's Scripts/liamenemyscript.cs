@@ -39,13 +39,18 @@ public class liamenemyscript : MonoBehaviour
     public int attackType = -1;
     public GameObject punchHitbox;
     public GameObject kickHitbox;
-        
+
+    [Header("Health")] 
+    public int currHealth;
+    public int maxHealth = 1;
+    
     void Start()
     {
         stopDistance = enemy.stoppingDistance;
         enemy.speed = moveSpeed;
         isAttacking = false;
         currPause = maxPause;
+        currHealth = maxHealth; 
     }
 
     void Update()
@@ -57,8 +62,16 @@ public class liamenemyscript : MonoBehaviour
         updateDistance();
         locomotion();
         attackManager();
+        if (currHealth <= 0)
+        {
+            death();
+        }
     }
 
+    void death()
+    {
+        _animator.enabled = false;
+    }
     void updateDistance()
     {
         Vector3 enemyXZ = getXZVector(transform);
@@ -118,7 +131,7 @@ public class liamenemyscript : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            _animator.enabled = false;
+            currHealth -= 1;
         }
     }
 
@@ -127,6 +140,7 @@ public class liamenemyscript : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             _animator.enabled = false;
+            currHealth -= 1;
         }
         
     }
