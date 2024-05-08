@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour {
     public GameObject healthBarCanvas;
     public GameObject pauseCanvas;
     public GameObject gameOverCanvas;
+    public GameObject gameWonCanvas;
     private bool isPaused;
     [HideInInspector]public bool gameLost;
     
@@ -27,8 +28,8 @@ public class UIManager : MonoBehaviour {
                 Pause();
         }
         
-        if (CollectionManager.totalDebt <= 0 || Input.GetKeyDown(KeyCode.O))
-            EndGame();
+        if (CollectionManager.totalDebt <= 0)
+            WonGame();
     }
 
     public void Pause() {
@@ -52,7 +53,20 @@ public class UIManager : MonoBehaviour {
         
         HUDCanvas.SetActive(false);
         healthBarCanvas.SetActive(false);
+        gameWonCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
+        StartCoroutine(WaitForAnimation());
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void WonGame() {
+        gameLost = true;
+        
+        HUDCanvas.SetActive(false);
+        healthBarCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+        gameWonCanvas.SetActive(true);
         StartCoroutine(WaitForAnimation());
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
