@@ -15,6 +15,7 @@ public class KenPlayerManager : MonoBehaviour
     private UIManager uiManager;
     private ParticleSystem  speedParticle;
     private ParticleSystem  healthParticle;
+    private ParticleSystem  deathParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class KenPlayerManager : MonoBehaviour
         healthBar.SliderMaxHealth(maxHealth);
         speedParticle = transform.Find("Speed Particle Effect").GetComponent<ParticleSystem>();
         healthParticle = transform.Find("Health Particle Effect").GetComponent<ParticleSystem>();
+        deathParticle = transform.Find("Player Death Effect").GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -103,6 +105,7 @@ public class KenPlayerManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             thirdPersonMovement._animator.enabled = false;
+            deathParticle.Play();
         }
         healthBar.SetHealth(currentHealth);
     }
