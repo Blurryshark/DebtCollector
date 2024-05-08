@@ -13,6 +13,10 @@ public class UIManager : MonoBehaviour {
     private bool isPaused;
     [HideInInspector]public bool gameLost;
     public float waitTime = 1f;
+
+    [Header("Sounds")] 
+    public float fadeOut = 1f;
+    public AudioSource music;
     
     void Start() {
         isPaused = false;
@@ -68,8 +72,7 @@ public class UIManager : MonoBehaviour {
         HUDCanvas.SetActive(false);
         healthBarCanvas.SetActive(false);
         gameOverCanvas.SetActive(false);
-        gameWonCanvas.SetActive(true);
-        //StartCoroutine(WaitForAnimation());
+        StartCoroutine(FadeOut(music, fadeOut));
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -91,4 +94,22 @@ public class UIManager : MonoBehaviour {
     //     yield return new WaitForSeconds(2);
     //     Time.timeScale = 0f;
     // }
+
+    IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+        gameWonCanvas.SetActive(true);
+        yield return new WaitForSeconds(2);
+        Time.timeScale = 0f;
+    }
 }

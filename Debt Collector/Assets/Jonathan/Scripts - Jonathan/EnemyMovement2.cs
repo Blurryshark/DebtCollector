@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyMovement2 : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class EnemyMovement2 : MonoBehaviour
     [Header("Animation")] 
     public Animator _animator;
     public String animatorSpeed = "Speed";
+    private CharacterController controller;
 
     [Header("Movement")] 
     public NavMeshAgent enemy;
@@ -23,9 +26,15 @@ public class EnemyMovement2 : MonoBehaviour
 
     [Header("Sounds")] public AudioSource deathSound;
 
+    [Header("Drops")]
+    public GameObject[] CollectableDrops;
+    public int upperBoundOfDrops = 11;
+    public int lowerBoundOfDrops = 1;
+
     void Start()
     {
         enemy.speed = speed;
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -47,7 +56,25 @@ public class EnemyMovement2 : MonoBehaviour
     {
         deathSound.Play();
         _animator.enabled = false;
+        CollectableDrop();
+        controller.enabled = false;
     }
+
+    void CollectableDrop()
+    {
+        
+        foreach(GameObject collectable in CollectableDrops)
+        {
+            int amount = Random.Range(lowerBoundOfDrops, upperBoundOfDrops);
+            for (int j = 0; j< amount; j++)
+            {
+                Vector3 spawnPosition = transform.position + new Vector3(Random.insideUnitCircle.x, 1f, Random.insideUnitCircle.y) * 0.8f;
+                Instantiate(collectable, spawnPosition, Quaternion.identity);
+            }
+            
+        }
+    }
+
     void locomotion()
     {
         currSpeed = enemy.velocity.magnitude;

@@ -4046,6 +4046,10 @@ MonoBehaviour:
   kickHitbox: {fileID: 6547893354277003820}
   currHealth: 0
   maxHealth: 1
+  CollectableDrops:
+  - {fileID: 5909957938947401320, guid: 37fce6300194e1a4bb55736da8b072c5, type: 3}
+  upperBoundOfDrops: 11
+  lowerBoundOfDrops: 1
   deathSound: {fileID: 5377703109908024479}
 --- !u!195 &5847479019204388242
 NavMeshAgent:
