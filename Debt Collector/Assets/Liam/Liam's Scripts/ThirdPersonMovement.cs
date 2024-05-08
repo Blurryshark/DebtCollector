@@ -95,8 +95,10 @@ public class ThirdPersonMovement : MonoBehaviour
             dodgeManager(); 
             attackManager();
         }
+        
     }
 
+    
     void Motivate()
     {
         applyGravity();

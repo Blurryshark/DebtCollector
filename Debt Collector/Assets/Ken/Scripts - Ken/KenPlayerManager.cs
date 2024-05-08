@@ -36,8 +36,21 @@ public class KenPlayerManager : MonoBehaviour
         {
             TakeDamage(25);
         }
-    }
 
+        if (currentHealth <= 0)
+        {
+            die();
+        }
+    }
+    private void die()
+    {
+        if (thirdPersonMovement._animator.enabled == false)
+        {
+            return;
+        }
+        deathParticle.Play();
+        thirdPersonMovement._animator.enabled = false;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
