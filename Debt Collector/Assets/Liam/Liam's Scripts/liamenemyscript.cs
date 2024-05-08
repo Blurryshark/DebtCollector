@@ -49,6 +49,7 @@ public class liamenemyscript : MonoBehaviour
     public GameObject[] CollectableDrops;
     public int upperBoundOfDrops = 11;
     public int lowerBoundOfDrops = 1;
+    public ParticleSystem deathParticle;
     
     void Start()
     {
@@ -174,6 +175,7 @@ public class liamenemyscript : MonoBehaviour
             // Deactivate the Kick and Punch hitboxes
             punchHitbox.SetActive(false);
             kickHitbox.SetActive(false);
+            deathParticle.Play();
         }
         
     }

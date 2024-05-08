@@ -28,6 +28,7 @@ public class EnemyMovement2 : MonoBehaviour
     public GameObject[] CollectableDrops;
     public int upperBoundOfDrops = 11;
     public int lowerBoundOfDrops = 1;
+    public ParticleSystem deathParticle;
 
     void Start()
     {
@@ -56,6 +57,7 @@ public class EnemyMovement2 : MonoBehaviour
             _animator.enabled = false;
             CollectableDrop();
             controller.enabled = false;
+            deathParticle.Play();
         }
     }
 

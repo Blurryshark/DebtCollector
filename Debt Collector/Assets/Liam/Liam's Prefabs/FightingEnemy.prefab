@@ -4046,6 +4046,9 @@ MonoBehaviour:
   maxHealth: 1
   CollectableDrops:
   - {fileID: 5909957938947401320, guid: 37fce6300194e1a4bb55736da8b072c5, type: 3}
+  upperBoundOfDrops: 11
+  lowerBoundOfDrops: 1
+  deathParticle: {fileID: 1157367244298189203}
 --- !u!195 &5847479019204388242
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4163,6 +4166,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d2a2c84293e1ed4aa3946550966a050, type: 3}
+--- !u!198 &1157367244298189203 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5602248707860136625, guid: 6d2a2c84293e1ed4aa3946550966a050, type: 3}
+  m_PrefabInstance: {fileID: 6751147513097878306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7689751300743442372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3965306170723063014, guid: 6d2a2c84293e1ed4aa3946550966a050, type: 3}

@@ -1910,6 +1910,7 @@ MonoBehaviour:
   - {fileID: 1261626011144327144, guid: 65b6b23f4d3d10a459a0ef876c247a3a, type: 3}
   upperBoundOfDrops: 11
   lowerBoundOfDrops: 1
+  deathParticle: {fileID: 4812857497737743128}
 --- !u!195 &424909884749633918
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4113,5 +4114,10 @@ PrefabInstance:
 --- !u!4 &4189939131453651243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3862651226655294176, guid: b61c304e228764325ae7ad3822829781, type: 3}
+  m_PrefabInstance: {fileID: 1134700000774306763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4812857497737743128 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5581639745319104723, guid: b61c304e228764325ae7ad3822829781, type: 3}
   m_PrefabInstance: {fileID: 1134700000774306763}
   m_PrefabAsset: {fileID: 0}
