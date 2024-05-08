@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CollectionManager : MonoBehaviour {
     public static CollectionManager instance;
-    public static int totalDebt = 1000;
+    public static int totalDebt;
     public TextMeshProUGUI debtText;
     [SerializeField]
     public TextMeshProUGUI itemText;
@@ -19,6 +19,11 @@ public class CollectionManager : MonoBehaviour {
         // else {
         //     Destroy(gameObject);
         // }
+    }
+
+    void Start()
+    {
+        totalDebt = 1000;
     }
 
     void LateUpdate() {

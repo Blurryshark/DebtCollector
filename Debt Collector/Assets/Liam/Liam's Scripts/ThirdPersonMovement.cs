@@ -89,7 +89,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_animator.isActiveAndEnabled)
+        if (_animator.enabled == true)
         {
             Motivate();
             dodgeManager(); 

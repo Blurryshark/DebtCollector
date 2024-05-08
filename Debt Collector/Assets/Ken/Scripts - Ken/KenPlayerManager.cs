@@ -34,10 +34,6 @@ public class KenPlayerManager : MonoBehaviour
         {
             TakeDamage(25);
         }
-
-        if(uiManager.gameLost){
-            
-        }
     }
 
     void OnTriggerEnter(Collider other)
