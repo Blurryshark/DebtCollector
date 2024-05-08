@@ -20,6 +20,7 @@ public class liamenemyscript : MonoBehaviour
     public String animatorIsAttacking = "isAttacking";
     public String animatorAttackType = "AttackType";
     public float velocity;
+    public ParticleSystem moneyExplosion;
 
     [Header("Locomotion")] 
     public float moveSpeed = 13f;
@@ -43,6 +44,8 @@ public class liamenemyscript : MonoBehaviour
     [Header("Health")] 
     public int currHealth;
     public int maxHealth = 1;
+
+    [Header("Sounds")] public AudioSource deathSound;
     
     void Start()
     {
@@ -63,14 +66,18 @@ public class liamenemyscript : MonoBehaviour
         locomotion();
         attackManager();
         if (currHealth <= 0)
-        {
             death();
-        }
+        
     }
 
     void death()
     {
-        _animator.enabled = false;
+        if (_animator.enabled = true)
+        {
+            _animator.enabled = false;
+            deathSound.Play();
+            moneyExplosion.Play();
+        }
     }
     void updateDistance()
     {
@@ -133,13 +140,13 @@ public class liamenemyscript : MonoBehaviour
         {
             currHealth -= 1;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            _animator.enabled = false;
             currHealth -= 1;
         }
         

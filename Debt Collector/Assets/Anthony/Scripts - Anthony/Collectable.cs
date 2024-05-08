@@ -10,6 +10,8 @@ public class Collectable : MonoBehaviour {
     private Transform magnetPoint;
     private float moveSpeed = 10f;
 
+    public AudioSource collectableSound;
+
     void Start() {
         value = moneyVal;
         magnetPoint = PlayerManager.playerTransform;
@@ -27,7 +29,7 @@ public class Collectable : MonoBehaviour {
                 Destroy(gameObject, 0.5f);
             else
                 Destroy(gameObject);
-            
+            collectableSound.Play();
         }
     }
 

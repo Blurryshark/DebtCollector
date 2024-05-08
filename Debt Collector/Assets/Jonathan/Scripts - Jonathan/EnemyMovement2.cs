@@ -20,7 +20,8 @@ public class EnemyMovement2 : MonoBehaviour
     public NavMeshAgent enemy;
     public float speed = 15f;
     public float currSpeed;
-    
+
+    [Header("Sounds")] public AudioSource deathSound;
 
     void Start()
     {
@@ -38,12 +39,13 @@ public class EnemyMovement2 : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("fuck");
+        deathSound.Play();
         _animator.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        deathSound.Play();
         _animator.enabled = false;
     }
     void locomotion()

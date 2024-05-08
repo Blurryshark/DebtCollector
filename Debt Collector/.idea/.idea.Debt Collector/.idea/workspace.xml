@@ -6,9 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="eee3c101-9d9e-468e-a0d4-bc9b3d8f401f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Debt Collector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anthony/Prefabs - Anthony/Money.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anthony/Prefabs - Anthony/Money.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anthony/Scripts - Anthony/Collectable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anthony/Scripts - Anthony/Collectable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Anthony/Scripts - Anthony/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anthony/Scripts - Anthony/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Jonathan/Scripts - Jonathan/EnemyMovement2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Jonathan/Scripts - Jonathan/EnemyMovement2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Ken/Scripts - Ken/KenPlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ken/Scripts - Ken/KenPlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/BigBoss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/BigBoss.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/FightingEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/FightingEnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/RunningEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/RunningEnemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player (w_ camera).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player (w_ camera).prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Prefabs/Third Person Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/liamenemyscript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Liam/Liam's Scripts/liamenemyscript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Sounds/punch1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Sounds/punch1.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Sounds/punch2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Liam/Sounds/punch2.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Integration Scene Ken.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Coin Collect PS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Coin Collect PS.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Enemy Defeat PS 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Enemy Defeat PS 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Player Death PS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Player Death PS.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +36,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Liam/Liam's Scripts/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Liam/Liam's Scripts/ThirdPersonMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -119,7 +136,7 @@
       <workItem from="1715147903682" duration="2000" />
       <workItem from="1715147921858" duration="1234000" />
       <workItem from="1715186354811" duration="1160000" />
-      <workItem from="1715188013712" duration="974000" />
+      <workItem from="1715188013712" duration="10817000" />
     </task>
     <servers />
   </component>

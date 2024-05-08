@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour {
     public GameObject gameWonCanvas;
     private bool isPaused;
     [HideInInspector]public bool gameLost;
+    public float waitTime = 1f;
     
     void Start() {
         isPaused = false;
@@ -54,8 +55,9 @@ public class UIManager : MonoBehaviour {
         HUDCanvas.SetActive(false);
         healthBarCanvas.SetActive(false);
         gameWonCanvas.SetActive(false);
-        gameOverCanvas.SetActive(true);
-        StartCoroutine(WaitForAnimation());
+        StartCoroutine(menuDelay());
+        
+        //StartCoroutine(WaitForAnimation());
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -67,7 +69,7 @@ public class UIManager : MonoBehaviour {
         healthBarCanvas.SetActive(false);
         gameOverCanvas.SetActive(false);
         gameWonCanvas.SetActive(true);
-        StartCoroutine(WaitForAnimation());
+        //StartCoroutine(WaitForAnimation());
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -76,9 +78,17 @@ public class UIManager : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator WaitForAnimation()
+    IEnumerator menuDelay()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(waitTime);
+        gameOverCanvas.SetActive(true);
+        yield return new WaitForSeconds(2);
         Time.timeScale = 0f;
+
     }
+    // IEnumerator WaitForAnimation()
+    // {
+    //     yield return new WaitForSeconds(2);
+    //     Time.timeScale = 0f;
+    // }
 }

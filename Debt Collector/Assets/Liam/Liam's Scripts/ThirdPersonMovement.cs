@@ -65,6 +65,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [Header("----------")]
     private Vector3 _input;
     public float raycastLength = 1.1f;
+    public KenPlayerManager kenPlayerManager;
     //public Transform transform;
    
 
@@ -95,7 +96,6 @@ public class ThirdPersonMovement : MonoBehaviour
             dodgeManager(); 
             attackManager();
         }
-        
     }
 
     
@@ -108,14 +108,18 @@ public class ThirdPersonMovement : MonoBehaviour
     private void getRotation()
     {
         if (direction.magnitude >= 0.1)
-        { 
+        {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; 
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, 
                 turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            
+            kenPlayerManager.walk.enabled = true;
+        }
+        else
+        {
+            kenPlayerManager.walk.enabled = false;
         }
         moveDir.y = _velocity; 
         applyMovement(moveDir,getSpeed());
@@ -166,10 +170,12 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             attackType = 0;
             attackCooldown = maxAttackCooldown;
+            kenPlayerManager.punch.Play();
         } else if (Input.GetButton("Heavy Attack") && !isAttacking)
         {
             attackType = 1;
             attackCooldown = maxHeavyAttackCooldown;
+            kenPlayerManager.kick.Play();
         }
 
         if (attackCooldown > 0)
@@ -191,9 +197,13 @@ public class ThirdPersonMovement : MonoBehaviour
             if (attackType == 0)
             {
                 punchHitbox.SetActive(true);
+               // kenPlayerManager.punch.time = 0.5f;
+                
             } else if (attackType == 1)
             {
                 kickHitbox.SetActive(true);
+              //  kenPlayerManager.kick.time = 0.5f;
+                
             }
         }
         else

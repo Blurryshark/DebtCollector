@@ -6,16 +6,33 @@ using UnityEngine;
 
 public class KenPlayerManager : MonoBehaviour
 {
+    [Header("PlayerStats")]
     public int maxHealth = 100;
     public HealthBar healthBar;
-
     public int currentHealth;
+    
+    [Header("Particles")]
+    private ParticleSystem  speedParticle; 
+    private ParticleSystem  healthParticle;
+    public ParticleSystem  deathParticle;
+    
+    [Header("UnityReference")]
     private bool isSpedUp;
     private ThirdPersonMovement thirdPersonMovement;
     private UIManager uiManager;
-    private ParticleSystem  speedParticle;
-    private ParticleSystem  healthParticle;
-    public ParticleSystem  deathParticle;
+
+    [Header("Sounds")] 
+    public float fadeOut = 1f;
+    public AudioSource Yoda;
+    public AudioSource Death;
+    public AudioSource kick;
+    public AudioSource punch;
+    public AudioSource walk;
+    public AudioSource ouch;
+    public AudioSource music;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -36,18 +53,33 @@ public class KenPlayerManager : MonoBehaviour
         {
             TakeDamage(25);
         }
-
-        if (currentHealth <= 0)
-        {
-            die();
-        }
     }
+
+    public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        audioSource.Stop();
+        audioSource.volume = startVolume;
+    }
+
     private void die()
     {
         if (thirdPersonMovement._animator.enabled == false)
         {
             return;
         }
+        StartCoroutine(FadeOut(music, fadeOut));
+        Debug.Log("playing sounds");
+        Death.Play();
+        Yoda.Play();
         deathParticle.Play();
         thirdPersonMovement._animator.enabled = false;
     }
@@ -104,6 +136,7 @@ public class KenPlayerManager : MonoBehaviour
 
     void TakeDamage(int damage)
     {   
+        ouch.Play();
         if(currentHealth > 0){
             currentHealth-=damage;
         } else {
@@ -117,8 +150,7 @@ public class KenPlayerManager : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            thirdPersonMovement._animator.enabled = false;
-            deathParticle.Play();
+            die();
         }
         healthBar.SetHealth(currentHealth);
     }
