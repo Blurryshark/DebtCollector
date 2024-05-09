@@ -9,6 +9,7 @@ TagManager:
   - Magnet
   - Item
   - Enemy
+  - door
   layers:
   - Default
   - TransparentFX
