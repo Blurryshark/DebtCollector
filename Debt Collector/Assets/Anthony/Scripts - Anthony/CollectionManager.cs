@@ -10,6 +10,7 @@ public class CollectionManager : MonoBehaviour {
     public TextMeshProUGUI debtText;
     [SerializeField]
     public TextMeshProUGUI itemText;
+    public int startDebt = 10000;
     
     void Awake() {
         // if (instance == null) {
@@ -23,7 +24,7 @@ public class CollectionManager : MonoBehaviour {
 
     void Start()
     {
-        totalDebt = 1000;
+        totalDebt = startDebt;
     }
 
     void LateUpdate() {
