@@ -194,8 +194,8 @@ MonoBehaviour:
   maxHealth: 1
   CollectableDrops:
   - {fileID: 1688001575851674214, guid: f03176af2c8011144a8ba7eb9744d972, type: 3}
-  upperBoundOfDrops: 11
-  lowerBoundOfDrops: 1
+  upperBoundOfDrops: 15
+  lowerBoundOfDrops: 8
   deathSound: {fileID: 1961917418796008825}
 --- !u!195 &733141855292892490
 NavMeshAgent:
