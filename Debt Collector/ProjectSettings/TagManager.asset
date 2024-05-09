@@ -13,6 +13,7 @@ TagManager:
   - SpeedUp
   - HealthUp
   - AttackUp
+  - door
   layers:
   - Default
   - TransparentFX

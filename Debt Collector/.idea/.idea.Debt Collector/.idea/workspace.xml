@@ -26,6 +26,10 @@
       <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Coin Collect PS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Coin Collect PS.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Enemy Defeat PS 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Enemy Defeat PS 1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/particles_p1/Player Death PS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/particles_p1/Player Death PS.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProBuilder Data/Default Color Palette.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Level JuSong.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Level JuSong.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +141,8 @@
       <workItem from="1715147921858" duration="1234000" />
       <workItem from="1715186354811" duration="1160000" />
       <workItem from="1715188013712" duration="10851000" />
+      <workItem from="1714014917267" duration="14837000" />
+      <workItem from="1715186201711" duration="10010000" />
     </task>
     <servers />
   </component>
