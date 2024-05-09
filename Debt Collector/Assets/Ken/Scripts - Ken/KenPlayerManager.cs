@@ -92,6 +92,14 @@ public class KenPlayerManager : MonoBehaviour
                 TakeDamage(25);
             }
         }
+
+        if (other.gameObject.tag == "Boss")
+        {
+            if (!thirdPersonMovement.isDodging)
+            {
+                TakeDamage(50);
+            }
+        }
         // Check if the other is a "SpeedUp"
         if (other.CompareTag("SpeedUp")){
             Debug.Log("Player Speed Up");
